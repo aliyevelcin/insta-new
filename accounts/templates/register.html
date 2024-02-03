@@ -1,0 +1,83 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block css %}
+    <link rel="stylesheet" href="{% static '/css/login.css' %}">
+{% endblock %}
+
+{% block content %}
+
+<div style="padding-top: 50px;"> 
+    <div class="login-1"   >
+        <div style="margin-left: 80px;background-image: url({% static '/img/logo.png' %} );width: 200px;background-size: cover;height: 100px; ">
+             
+        </div>
+        <div style="padding-left: 55px;padding-right: 55px;" >
+            <h1 class="login-2" >Arkadaşlarının fotoğraf ve videolarını görmek için kaydol.</h1>
+            <a style="text-decoration: none;" href="#"><button style="border: none;background-color: #1877F2;color: white;border-radius: 10px;width: 270px;padding: 5px;"><img style="height: 30px;" src="{% static '/img/fbb.png' %}" alt="">  Facebook ile Giriş Yap</button></a>
+        </div>      
+        <div style="display: flex;padding-top: 10px;justify-content: center;padding-bottom: 10px;" >
+            <div  style="border-bottom: 1px rgb(185, 185, 185) solid;    width: 100px;margin-bottom: 15px;margin-right: 15px;"></div>    
+            <h1 style="font-size: 15px;">YA DA</h1>
+            <div  style="border-bottom: 1px rgb(185, 185, 185) solid;    width: 100px;margin-bottom: 15px;margin-left: 15px;"></div>    
+        </div>
+
+        <form action="" method="post">
+            {% csrf_token %}
+            <div style="padding-top: 10px;">
+                {{form.username}}
+                {{form.username.errors}}
+            </div>
+            <div style="padding-top: 10px;">
+                {{form.first_name}}
+                {{form.first_name.errors}}
+            </div>
+            <div style="padding-top: 10px;"> 
+                {{form.email}}
+                {{form.email.errors}}
+            </div>
+            <div style="padding-top: 10px;">
+                {{form.password1}}
+                {{form.password1.errors}}
+            </div>
+            <div style="padding-top: 10px;">
+                {{form.password2}}
+                {{form.password2.errors}}
+            </div>
+            <div style="padding-top: 20px;">
+                <p style="font-size: 11px;padding-left: 45px;width: 320px;">Hizmetimizi kullanan kişiler senin iletişim bilgilerini Instagram'a yüklemiş olabilir.  <a  style="text-decoration: none;" href="#">Daha Fazla Bilgi Al</a></p>
+                <p style="font-size: 10px;">Kaydolarak, <a  style="text-decoration: none;" href="#"> Koşullarımızı, Gizlilik İlkemizi </a>ve <br> <a  style="text-decoration: none;" href="#">Çerezler İlkemizi</a>kabul etmiş olursun.</p>
+            </div>
+        
+            <div style="padding-bottom: 30px;">
+                <a style="text-decoration: none;" href="#"><button style="border: none;background-color:#4CB5F9;color: white;border-radius: 10px;width: 250px;padding: 3px;outline: none;">Kaydol</button></a>
+            </div>
+        </form>
+    </div>
+    <div style="padding-top: 20px;padding-bottom: 50px;">
+        <div style="border: 1px solid rgba(0,0,0,.125);width: 400px;padding-top: 25px;text-align: center;pad">
+            <p>Hesabın var mı? <a  href="{% url 'accounts:login' %}" style="color: blue !important;"  > Giriş yap</a> </p>
+        </div> 
+    </div>
+</div>
+
+<footer style=" padding-bottom: 50px;color: black;text-align: center;font-size: 11px;">
+    <div>
+        <a href="">Meta</a>
+        <a href="">Hakkında </a>
+        <a href="">Blog</a>
+        <a href="">İş Fırsatları</a>
+        <a href="">Yardım</a>   
+        <a href="">API</a>
+        <a href="">Gizlilik</a>
+        <a href="">Koşullar</a>
+        <a href="">Başlıca Hesaplar</a>
+        <a href="">Konumlar</a>
+        <a href="">Instagram Lite</a>
+        <a href="">Kişi Yükleme ve Hesabı Olmayan Kişiler</a>
+        <a href="">Meta Verified</a>
+        <br>
+        <a href="">Türkçe</a>
+        <a href="">© 2023 Instagram from Meta</a>
+    </div>
+</footer>
+{%endblock%}

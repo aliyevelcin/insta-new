@@ -1,0 +1,153 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block css %}
+<link rel="stylesheet" href="{% static '/css/exp.css' %}">
+{% endblock %}
+
+{% block content %}
+
+    <div class="container-fluid">
+        <div class="row">
+            {% include "includes/sidebars.html" %}
+            <div class="col-md-10">
+                <div class="container-fluid">
+                    <div class="row dis" style="padding-top: 30px;">
+                        {% for post in posts %}
+                        <div id="myOverlay{{post.id}}" class="overlay">
+                            <span class="closebtn" onclick="closeSearch{{post.id}}()" title="Close Overlay">×</span>
+                            <div class="overlay-content">
+                                <div  >
+                                    <div class="res-1 " style="padding-bottom: 50px;padding-left: 170px;padding-right: 170px;">
+                                        <div class="card-item" style="background-color: #ffffff;">
+                                            <div style="display: flex;height: 550px;" > 
+                                                <div style="height: 550px;width: 500px;background-size: contain;background-image: url({{post.image.url}});background-repeat: no-repeat;background-position: center;">
+                                                </div>
+                                                <div class="full" style="border: 1px solid rgba(0,0,0,.125);padding-top: 15px;">
+                                                    <div class="card-header"  >
+                                                        <div class="card-hover" >
+                                                            {%if request.user.image %}
+                                                                <a href="{% url 'accounts:profile_account' post.account.slug %}">
+                                                                    <img style="cursor: pointer;border-radius: 50%;width: 45px;height: 45px;margin-left: 12px;" src="{{post.account.image.url}}" alt="">
+                                                                </a>    
+                                                                <a href="{% url 'accounts:profile_account' post.account.slug %}"> 
+                                                                    <span  style="color: black;margin-left: 10px;cursor: pointer;">{{post.account.username }}</span>
+                                                                </a> 
+                                                            {%else%}
+                                                                <a href="{% url 'accounts:profile_account' post.account.slug %}">
+                                                                    <img style="cursor: pointer;border-radius: 50%;width: 45px;height: 45px;" src="{% static '/img/profile.png'%}" alt="">
+                                                                </a>
+                                                                <a href="{% url 'accounts:profile_account' post.account.slug %}"> 
+                                                                    <span  style="color: black;margin-left: 10px;cursor: pointer;">{{post.account.username }}</span>
+                                                                </a> 
+                                                            {%endif%}
+                                                        </div>
+                                                        <img class="open1"   style="width: 25px;cursor: pointer;color: white;" src="{% static '/img/salam.png' %}" alt="">
+                                                    </div>
+                                                    <div style="padding: 10px;">
+                                                        <div style="width: 500px;overflow-y: scroll;overflow-x: hidden;height: 300px;">
+                                                            <div>
+                                                                <div class="card-hover "  >
+                                                                    {%if post.account.image %}
+                                                                        <a href="{% url 'accounts:profile_account' post.account.slug %}">
+                                                                            <img style="cursor: pointer;border-radius: 50%;width: 45px;height: 45px;" src="{{post.account.image.url}}" alt="">
+                                                                        </a>
+                                                                        <a href="{% url 'accounts:profile_account' post.account.slug %}"> 
+                                                                            <span style=" margin-left: 20px;cursor: pointer;color: black;">{{post.account.username }}      
+                                                                        </a>
+                                                                                <span class="text-dark" style="color: black;margin-left: 10px;cursor: pointer none; "> {{post.description}}</span>
+                                                                            </span>
+                                                                    {%endif%}
+                                                                </div>
+                                                                <p style="color: #989899;margin-left: 60px;cursor: pointer;font-size: 12px;">1h  378 beğenme Yanıtla Çevirsine bax </p>
+                                                                
+                                                                {% for comment in post.comments.all  %}
+                                                                    {%if post.account.image %}
+                                                                
+                                                                <div style="display: flex;padding-top: 15px;">
+                                                                    <a href="{% url 'accounts:profile_account' comment.account.slug %}">
+                                                                        <img style="cursor: pointer;border-radius: 50%;width: 45px;height: 45px;" src="{{comment.account.image.url}}" alt="">
+                                                                    </a>
+                                                                    <a href="{% url 'accounts:profile_account' comment.account.slug %}"> 
+                                                                        <h1 style="  display: flex;   color: black;font-size: 16px;cursor: pointer; padding-top: 5px;margin-left: 15px;">{{comment.account }}     
+                                                                    </a>
+                                                                            <p   style="color: rgb(90, 86, 86);margin-left: 10px;cursor: pointer none;font-size: 16px; "> {{comment.description}}</p>
+                                                                        </h1>
+                                                                        
+                                                                        
+                                                                    </div>
+                                                                    <p style="color: #989899;margin-left: 60px;cursor: pointer;font-size: 12px;">1h  378 beğenme Yanıtla Çevirsine bax </p>
+                                                                     {%endif%}
+
+                                                                    
+                                                                {% endfor %}
+                                                                
+
+                                                            </div>
+                                                        </div>   
+                                                        <div class="card-top" style="padding-bottom: 10px;">   
+                                                            <div>
+                                                                <img style="width: 20px;cursor: pointer;" src="{% static '/img/heart.png' %}" alt="">
+                                                                <img style="width: 20px;margin-left: 10px;cursor: pointer;" src="{% static '/img/chat.png' %}" alt="">
+                                                                <img style="width: 20px;margin-left: 10px;cursor: pointer;" src="{% static '/img/send.png' %}" alt="">
+                                                            </div>
+                                                            <div>
+                                                                <img style="width: 20px;margin-left: 5px;cursor: pointer;" src="{% static '/img/ribbon.png' %}" alt="">
+                                                            </div>  
+                                                        </div>
+                                                        <p style="color: rgb(0, 0, 0);cursor: pointer;">{{post.likes}} likes</p>
+                                                        <p style="font-weight: 200; color: darkgrey;margin-top: -10px;">1 yorumunuu tümünü gör</p>
+
+
+                                                        <form action="" method="post">
+                                                            {% csrf_token %}
+                                                            <div style="display: flex;" >
+                                                                <div>
+                                                                    {{form.description}}
+                                                                    {{form.description.errors}}
+                                                                   <input type="text" name="post" value="{{post.id}}" style="display: none;">
+                                                                </div>
+                                                                <div  >
+                                                                    <a style="text-decoration: none;" href="#"><button style="border: none;background-color:#4CB5F9;color: white;border-radius: 10px;width: 72px;padding: 4px;outline: none;">Gönder</button></a>
+                                                                     
+                                                                </div>
+
+                                                            </div>
+                                                        </form>
+
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div> 
+                                </div>
+                            </div>
+                        </div>
+        <script>
+            function openSearch{{post.id}}() {
+                document.getElementById("myOverlay{{post.id}}").style.display = "block";
+            }
+        
+            function closeSearch{{post.id}}() {
+                document.getElementById("myOverlay{{post.id}}").style.display = "none";
+            }
+        </script>
+                        <div class="col-md-4 dis" style="padding-bottom: 5px;"  >
+                            <div onclick="openSearch{{post.id}}()"  class="containerr weeknd" style="cursor: pointer;background-image: url({{post.image.url}});width:360px;height: 280px;background-size: cover; "  class="image">
+                              <div class="middle">
+                                <div class="text">
+                                    <img style="width: 20px;cursor: pointer;color: white; " class="olcu" src="{% static '/img/beyeni.png' %}" alt="">
+                                    <h4 style="margin-left: 10px; " class="olcu">{{post.likes}}</h4>
+                                    <img style="width: 20px;margin-left: 10px;cursor: pointer; " class="olcu" src="{% static '/img/yorum.png' %}" alt="">
+                                    <h4 style="margin-left: 10px; " class="olcu">1.43</h4>
+                                </div>
+                              </div>
+                            </div>
+                        </div>
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

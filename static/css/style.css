@@ -1,0 +1,339 @@
+body{
+    display: grid;
+    place-items: center;
+    
+}
+.box{
+    cursor: pointer;
+}
+.box .img{
+    width: 60px;
+    height: 60px;
+    margin-left: 6px;
+    margin-bottom: 4px;
+}
+  
+.box .img img{
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+}
+  
+.box .text{
+    width: 80px;
+}
+
+.box .text p{
+    font-weight: bold;
+    text-align: center;
+    font-size: 13px;
+}
+
+.content{
+    width: 100%;
+    min-height: 130vh;
+}
+
+.content .h2{
+    padding: 20px 0 30px 0;
+}
+  
+.card-item{
+    position: relative;
+}
+
+.card-header{
+    padding: 0 0 15px 0 !important;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: white !important;
+    width:100% ;
+    height: 40px;
+}
+  
+.card-hover{
+    display: flex;
+    align-items: center;
+    gap: 1px;
+    overflow: hidden;
+}
+
+.card-hover p{
+    color: rgb(18, 18, 197);
+    font-weight: bold;
+}
+  
+.card-hover img{
+    width: 40px;
+    border-radius: 50%;
+}
+ 
+.card-center{
+    width: 100%;
+    height: 100%;
+}
+
+.card-center img{
+    width: 100%;
+
+}
+
+.card-top {
+    display: flex;
+    justify-content: space-between; 
+}
+
+.card-center p{
+    font-size: 14px;
+}
+
+.card14 {
+    border: 1px solid rgba(0, 0, 0, 0.39);
+}
+
+.text1{
+    padding-bottom: 20px;
+}
+
+.len {
+    white-space: nowrap; 
+    width: 60px; 
+    overflow: hidden;
+    text-overflow: ellipsis; 
+    border: 1px solid #000000;
+    border:none
+}
+
+.len-2 {
+    white-space: nowrap; 
+    width: 100px; 
+    overflow: hidden;
+    text-overflow: ellipsis; 
+    border: 1px solid #000000;
+    border:none
+}
+/* :fullscreen */
+ 
+
+.openBtn:hover {
+    background: #bbb;
+  }
+  
+  .overlayy {
+    height: 100%;
+    width: 100%;
+    display: none;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: rgb(0,0,0);
+    background-color: rgba(0,0,0, 0.9);
+  }
+  
+  .overlayy-content {
+    position: relative;
+     
+    width: 80%;
+    text-align: center;
+    margin-top: 30px;
+    margin: auto;
+  }
+  
+  .overlayy .closebtnn {
+    position: absolute;
+    top: 20px;
+    right: 45px;
+    font-size: 60px;
+    cursor: pointer;
+    color: white;
+  }
+  
+  .overlayy .closebtn:hover {
+    color: #ccc;
+  }
+   
+      .sec{
+          height: 100vh;
+          display: grid;
+          place-items: center;
+           
+      }
+      
+      .cardd{
+          
+          height:570px ;
+          background-color: rgb(47, 48, 47);
+      }
+      
+      /* andimation */
+      .cardd-loading{
+          width: 300px;
+          height: 20px;
+          border-radius: 5px;
+          padding: 20px;
+      }
+      
+      .cardd-loading::after{
+          content: '';
+          display: block;
+          width: 0%;
+          height: 3px;
+          background-color: white;
+          animation: loading 4000ms infinite;
+          border-radius: 5px;
+      }
+      @keyframes loading{
+          0%{
+              width: 0;
+          }
+      
+          76%{
+              width: 76%;
+          }
+      
+          100%{
+              width: 100%;
+          }
+      }
+      
+      /* header */
+      
+      /* left start */
+      .headerrr{
+          width: 90%;
+          margin: 0 auto;
+          display: flex;
+          gap: 50px;
+      }
+      
+.leftt{
+    cursor: pointer !important;
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+      
+      .leftt img{
+          width: 40px;
+          height: 40px;
+          border-radius: 50%;
+      }
+      
+      span{
+          font-size: 14px;
+          color: white;
+          opacity: .8;
+      }
+      
+      span:nth-child(3){
+          color: darkgrey;
+      }
+      
+      /* left end */
+      
+      /* right start */
+      
+      .rightt{
+          display: flex;
+          gap: 10px;
+          align-items: center;
+          color: white;
+      }
+      
+      /* right end */
+      
+      /* center img start */
+      
+      .cardd-image{
+          width: 100%;
+          height: 45vh;
+          display: grid;
+          place-items: center;
+          margin: 30px 0;
+      }
+      
+      .bgg{
+          width: 350px;
+          height: 40vh;
+           
+      }
+      
+      /* center img end */
+      
+      /* footer start */
+      
+      footer{
+          display: flex;
+          width: 90%;
+           
+          gap: 30px;
+          align-items: center;
+      }
+      
+      footer input{
+          width: 300px;
+          height: 40px;
+          border-radius: 30px;
+          border: 1px solid black;
+          color: rgb(0, 0, 0);
+          outline: none;
+          margin-left: 10px;
+      }
+      
+      input::placeholder{
+          padding-left: 20px;
+      }
+      
+      footer h2{
+          display: flex;
+          gap: 10px;
+      }
+      
+      h2 .icoo{
+          background-color: transparent;
+          border: none;
+          font-size: 25px;
+      }
+      
+      h2 .icoo:focus{
+          color: red;
+      }
+/* :fullscreen */
+/* POPAP 3noqde  */
+.form-popup {
+    display: none;
+    position: fixed;
+    bottom: 50px;
+    z-index: 9;
+}
+.form-container {
+    max-width: 400px;
+    background-color: rgb(255, 255, 255);
+}
+.form-container .btn {
+    background-color: #ffffff;
+    color: rgb(0, 0, 0);
+    padding: 12px 14px;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    opacity: 0.8;
+}
+.form-container .btn:hover{
+    background: #bbb;
+}
+.form-container .cancel {
+    background-color: rgb(255, 255, 255);
+}
+.form-container .btn:hover, .open-button:hover {
+    opacity: 1;
+}
+/* POPAP  */
+
+.comment {
+    border: none !important;
+    outline: none !important;
+     
+  }

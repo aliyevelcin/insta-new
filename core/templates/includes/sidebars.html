@@ -1,0 +1,86 @@
+{% load static %}
+<div  style="border-right: 1px rgb(185, 185, 185) solid;" class="col-md-2">
+    <a href="{% url 'core:main' %}"> 
+    <div style="cursor: pointer;">
+        <h4 style=" color: black; padding: 15px; ">Instagram</h4>
+    </div>
+    </a>
+
+    <a style="text-decoration: none;color: black;" href="{% url 'core:main' %}">
+    <div class="icon-text">
+        <img class="icons" src="{% static '/img/house.png' %}" alt="">
+        <p class="p-1">Home</p>
+    </div>
+    </a>
+
+    <a href="#">
+        <div class="icon-text">
+            <img class="icons" src="{% static '/img/search.png' %}" alt="">
+            <p class="p-1">Search</p>
+        </div>
+    </a>
+
+    <a style="color: black;" href="{% url 'core:explore' %}">
+    <div class="icon-text">
+        <img class="icons" src="{% static 'img/explore.png' %}" alt="">
+        <p class="p-1">Explore</p>
+    </div>
+    </a>
+
+    <a href="#">
+        <div class="icon-text" >
+            <img class="icons" src="{% static '/img/reels.png' %}" alt="">
+            <p class="p-1">Reels</p>
+        </div>
+    </a>
+    
+    <a href="#">
+        <div class="icon-text">
+            <img class="icons" src="{% static '/img/message.png' %}" alt="">
+            <p class="p-1">Message</p>
+        </div>
+    </a>
+
+    <a href="#">
+        <div class="icon-text">
+            <img class="icons" src="{% static '/img/Notifications.png'%}" alt="">
+            <p class="p-1">Notifications</p>
+        </div>
+    </a>
+
+   
+
+    <a href="{% url 'core:story' %}">
+        <div class="icon-text">
+            <img class="icons" src="{% static '/img/create.png'%}" alt="">
+            <p class="p-1">Create Story</p>
+        </div>
+    </a>
+
+    <a href="{% url 'core:post' %} ">
+        <div class="icon-text">
+            <img class="icons" src="{% static '/img/create.png'%}" alt="">
+            <p class="p-1">Create Post</p>
+        </div>
+    </a>
+    
+    {%if request.user.username%}
+    <a style="text-decoration: none;color: black;" href="{% url 'accounts:profile_account' request.user.slug %}">
+        <div class="icon-text"> 
+            {%if request.user.image %}
+                <img class="icons" style="border-radius: 20px;" src="{{request.user.image.url}}" alt="">
+            {%else %}
+                <img class="icons" src="{% static '/img/profile.png'%}" alt="">
+            {%endif%}
+                 <p class="p-1">Profile</p>
+        </div>
+    </a>
+    {%endif%}
+    
+    <a href="#">
+        <div class="icon-text">
+            <img class="icons" src="{% static '/img/more.png'%}" alt="">
+            <p class="p-1">More</p>
+        </div>
+    </a>
+</div>

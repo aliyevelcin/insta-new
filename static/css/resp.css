@@ -1,0 +1,175 @@
+@media screen and (max-width:427px){
+   /* insta.html  */
+     
+   .content{
+        padding-left: 0px !important;
+        padding-right: 0px !important;
+     }
+     .el{
+        padding-left: 0px !important;
+        padding-right: 0px !important;
+     }
+     .sa-1{
+      display: none;
+     }
+     .res-1{
+      padding-left: 0px !important;
+      padding-right: 0px !important;
+   }
+   .ove{
+      width: 320px !important;
+   }
+   .form-popup{
+      padding-left: 0px !important;
+      text-align: center;
+      
+   }
+    
+    .basqa{
+      display: none;
+    }
+
+   .overlay{
+      display: none !important;
+   }
+   /* insta.html  */
+
+   /* explore html */
+
+   .trend{
+      padding-top: 10px !important;
+   }
+   .profile-img{
+      width: 100% !important;
+      height: 350px !important;
+   }
+   .telefon{
+      display: none;
+   }
+
+   .img-pad{
+      padding-left: 0px !important;
+   }
+  }
+
+@media (min-width:767px) and (max-width:768px){
+   /* insta.html  */
+   .basqa {
+      display: none;
+   }
+   .res-1{
+      padding-left: 90px !important;
+      padding-right: 0px !important;
+   }
+   .ove{
+      width: 660px !important;
+   }
+   .md-6{
+      flex: 0 0 100% !important;
+      max-width: 70% !important;
+   }
+   .card-hover img {
+      width: 50px !important;
+   }
+   /* insta.html  */
+
+   /* explore.html  */
+   .weeknd{
+      margin-left: 20px !important;
+      width: 190px !important;
+      height: 190px !important;
+   }
+   .p-1 {
+      display: none;
+   }
+   .insta {
+      display: none;
+   }
+   .md-2{
+      max-width: 10.666667% !important;
+
+   }
+   /* explore.html  */
+   .overlay{
+      display: none !important;
+   }
+
+
+   /* profile html  */
+   .profile-img{
+      width: 150px !important;
+      height: 130px !important;
+   }
+
+    
+   /* profile html  */
+
+   .telefon{
+      display: none;
+   }
+
+}
+
+
+@media (min-width:769px) and (max-width:1024px){
+   /* insta.html  */
+   .basqa {
+      display: none;
+   }
+   .res-1{
+      padding-left: 90px !important;
+      padding-right: 0px !important;
+   }
+   .ove{
+      width: 660px !important;
+   }
+   .md-6{
+      flex: 0 0 100% !important;
+      max-width: 70% !important;
+   }
+   .card-hover img {
+      width: 50px !important;
+   }
+   /* insta.html  */
+
+   /* explore.html  */
+   .weeknd{
+      margin-left: 20px !important;
+      width: 270px !important;
+      height: 270px !important;
+   }
+   .p-1 {
+      display: none;
+   }
+   .insta {
+      display: none;
+   }
+   .md-2{
+      max-width: 10.666667% !important;
+
+   }
+   .overlay{
+      display: none !important;
+   }
+   /* explore.html  */
+
+    /* profile html  */
+    .profile-img{
+      width: 210px !important;
+      height: 160px !important;
+   }
+
+    
+   /* profile html  */
+   .telefon{
+      display: none;
+   }
+    
+
+}
+
+/* update */
+.yeni:hover {
+   color: rgb(146, 142, 142) !important;
+}
+/* update */

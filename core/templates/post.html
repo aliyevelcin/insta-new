@@ -1,0 +1,49 @@
+{% extends 'base.html' %}
+{% load static%}
+
+{% block content %}
+<div class="container-fluid">
+    <div class="row">
+        {% include "includes/sidebars.html" %}
+        <div class="col-md-10 ">
+
+            <div>
+                <div style="justify-content: center;">
+                    <div class="share" style=" margin-top: 150px;text-align: center;">
+                        <img style="width: 60px; cursor: pointer;text-align: center;" class="camera" src="{% static '/img/camera.png'%}" alt="">
+                        <h3 style="font-family: fantasy sans-serif;">Share Post</h3>
+                        <p style="font-family: sans-serif;">When you share post, they will appear on your profile.</p>
+                        <form action="" method="POST"  enctype='multipart/form-data'>
+                            {% csrf_token %}
+                            <div>
+                                {{form.image}}
+                                {{form.image.errors}}
+
+                            </div>
+                            <div>
+
+                                {{form.description}}
+                                {{form.description.errors}}
+
+                            </div>
+                            <div>
+                                {{form.likes}}
+                                {{form.likes.errors}}
+
+
+                            </div>
+                            <!-- <input type="file"  src="" alt="" style="padding-bottom: 15px;"> -->
+                             <br>   
+                             <input  type="submit"  style="background-color: blue;color: white;border: none;" value=" Share your first story"> 
+                         
+                         </form>
+                    </div>
+                </div>
+            </div>
+</div>
+    
+
+ 
+
+
+{% endblock %}
